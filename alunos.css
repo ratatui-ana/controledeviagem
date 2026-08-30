@@ -1,0 +1,724 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding-bottom: 80px;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 20px;
+}
+
+
+.header-content {
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+header p {
+    opacity: 0.8;
+}
+
+
+.voltar {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* RESUMO */
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+.resumo-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.numero {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+
+.texto {
+    font-size: 13px;
+    color: #777;
+}
+
+
+.embarcados .numero {
+    color: #198754;
+}
+
+
+.pendentes .numero {
+    color: #dc3545;
+}
+
+
+/* FILTROS */
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.filtros input,
+.filtros select {
+    padding: 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+/* LISTA */
+
+.lista {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.lista h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ALUNO */
+
+.aluno {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.aluno:last-child {
+    border-bottom: none;
+}
+
+
+/* AVATAR */
+
+.avatar {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+
+/* INFORMAÇÕES */
+
+.informacoes {
+    flex: 1;
+}
+
+
+.informacoes h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+.informacoes p {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* AÇÕES */
+
+.acoes-aluno {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.acoes-aluno a {
+    color: #1e3a5f;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* STATUS */
+
+.status {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.status.embarcado {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+
+.status.pendente {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+
+.status.desembarcado {
+    background-color: #e2d9f3;
+    color: #5a3d8a;
+}
+
+
+/* MENU */
+
+.menu-inferior {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 12px;
+}
+
+
+.menu-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+
+.menu-item.ativo {
+    color: #1e3a5f;
+
+    font-weight: bold;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aluno {
+        flex-wrap: wrap;
+    }
+
+
+    .acoes-aluno {
+        width: 100%;
+
+        justify-content: space-between;
+
+        margin-left: 65px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .header-content {
+        align-items: flex-start;
+    }
+
+}
+.btn-detalhes {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 8px 14px;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.btn-detalhes:hover {
+    background-color: #152b47;
+
+    transform: translateY(-1px);
+}
+
+.lista-alunos {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lista-alunos h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.aluno {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.aluno:last-child {
+    border-bottom: none;
+}
+
+.aluno-info {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1e3a5f;
+    color: white;
+
+    font-weight: bold;
+}
+
+.nome {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.turma {
+    font-size: 13px;
+    color: #777;
+}
+
+.status {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.embarcado {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status.pendente {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.status.desembarcado {
+    background: #e2d9f3;
+    color: #5a3d8a;
+}
+
+.btn-detalhes {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 8px 14px;
+
+    background: #1e3a5f;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.btn-detalhes:hover {
+    background: #152b47;
+
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+
+    .aluno {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .aluno-info {
+        min-width: 0;
+    }
+
+    .nome {
+        font-size: 14px;
+    }
+
+    .btn-detalhes {
+        white-space: nowrap;
+    }
+
+}
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+
+    width: 100%;
+    max-width: 450px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+}
+
+.fechar-modal {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f3f5;
+
+    color: #555;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.modal-avatar {
+    width: 75px;
+    height: 75px;
+
+    margin: 5px auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1e3a5f;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.modal-conteudo h2 {
+    color: #1e3a5f;
+
+    margin-bottom: 5px;
+}
+
+.modal-turma {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.dados-aluno {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+.dado {
+    background: #f5f6f8;
+
+    padding: 12px;
+
+    border-radius: 9px;
+}
+
+.dado span {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.dado strong {
+    display: block;
+
+    color: #333;
+
+    font-size: 13px;
+
+    word-break: break-word;
+}
+
+.status-modal {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f5f6f8;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.status-modal span {
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+#modalStatus {
+    color: #1e3a5f;
+}
+
+.acoes-modal {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.acoes-modal button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-embarcar {
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+.btn-desembarcar {
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+.btn-reembarcar {
+    background: #e2d9f3;
+
+    color: #5a3d8a;
+}
+
+@media (max-width: 500px) {
+
+    .modal-conteudo {
+        padding: 25px 18px;
+    }
+
+    .dados-aluno {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alunos - Controle de Viagem</title>
+
+    <link rel="stylesheet" href="alunos.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>👨‍🎓 Alunos</h1>
+
+                <p>Visita Técnica – UNICAMP</p>
+
+            </div>
+
+            <a href="index.html" class="voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- RESUMO -->
+
+        <section class="resumo">
+
+            <div class="resumo-card">
+
+                <span class="numero" id="totalAlunos">0</span>
+
+                <span class="texto">Total</span>
+
+            </div>
+
+
+            <div class="resumo-card embarcados">
+
+                <span class="numero" id="totalEmbarcados">0</span>
+
+                <span class="texto">Embarcados</span>
+
+            </div>
+
+
+            <div class="resumo-card pendentes">
+
+                <span class="numero" id="totalPendentes">0</span>
+
+                <span class="texto">Pendentes</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- BUSCA -->
+
+        <section class="filtros">
+
+            <input
+                type="text"
+                id="buscaAluno"
+                placeholder="🔎 Buscar por nome ou matrícula..."
+            >
+
+
+            <select id="filtroStatus">
+
+                <option value="">
+                    Todos os status
+                </option>
+
+                <option value="embarcado">
+                    Embarcados
+                </option>
+
+                <option value="pendente">
+                    Pendentes
+                </option>
+
+                <option value="desembarcado">
+                    Desembarcados
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- LISTA -->
+
+        <section class="lista-alunos">
+
+            <h2>Lista de alunos</h2>
+
+
+            <!-- ALUNO 1 -->
+
+            <div class="aluno">
+
+                <div class="avatar">
+                    AC
+                </div>
+
+
+                <div class="informacoes">
+
+                    <h3>Ana Carolina Silva</h3>
+
+                    <p>
+                        2º Ano A • Matrícula: 123456
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-aluno">
+
+                    <span class="status embarcado">
+                        ✓ Embarcado
+                    </span>
+
+                   <a
+    class="btn-detalhes"
+    href="fichamodelo.html?matricula=${aluno.matricula}"
+>
+    Ver detalhes →
+</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALUNO 2 -->
+
+            <div class="aluno">
+
+                <div class="avatar">
+                    JP
+                </div>
+
+
+                <div class="informacoes">
+
+                    <h3>João Pedro Santos</h3>
+
+                    <p>
+                        2º Ano B • Matrícula: 123457
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-aluno">
+
+                    <span class="status pendente">
+                        Pendente
+                    </span>
+
+                   <a
+    class="btn-detalhes"
+    href="fichamodelo.html?matricula=${aluno.matricula}"
+>
+    Ver detalhes →
+</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALUNO 3 -->
+
+            <div class="aluno">
+
+                <div class="avatar">
+                    MS
+                </div>
+
+
+                <div class="informacoes">
+
+                    <h3>Maria Souza Oliveira</h3>
+
+                    <p>
+                        2º Ano A • Matrícula: 123458
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-aluno">
+
+                    <span class="status desembarcado">
+                        Desembarcado
+                    </span>
+
+<a
+    class="btn-detalhes"
+    href="fichamodelo.html?matricula=${aluno.matricula}"
+>
+    Ver detalhes →
+</a>
+                </div>
+
+            </div>
+
+
+            <!-- ALUNO 4 -->
+
+            <div class="aluno">
+
+                <div class="avatar">
+                    RL
+                </div>
+
+
+                <div class="informacoes">
+
+                    <h3>Rafael Lima Costa</h3>
+
+                    <p>
+                        2º Ano C • Matrícula: 123459
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-aluno">
+
+                    <span class="status embarcado">
+                        ✓ Embarcado
+                    </span>
+
+                    <a
+    class="btn-detalhes"
+    href="fichamodelo.html?matricula=${aluno.matricula}"
+>
+    Ver detalhes →
+</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALUNO 5 -->
+
+            <div class="aluno">
+
+                <div class="avatar">
+                    LM
+                </div>
+
+
+                <div class="informacoes">
+
+                    <h3>Lucas Martins</h3>
+
+                    <p>
+                        2º Ano B • Matrícula: 123460
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-aluno">
+
+                    <span class="status pendente">
+                        Pendente
+                    </span>
+
+<a
+    class="btn-detalhes"
+    href="fichamodelo.html?matricula=${aluno.matricula}"
+>
+    Ver detalhes →
+</a>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+<!-- MODAL DE DETALHES -->
+
+<div id="modalAluno" class="modal">
+
+    <div class="modal-conteudo">
+
+        <button class="fechar-modal" id="fecharModal">
+            ×
+        </button>
+
+        <div class="modal-avatar" id="modalAvatar">
+            AC
+        </div>
+
+        <h2 id="modalNome">
+            Nome do aluno
+        </h2>
+
+        <p class="modal-turma" id="modalTurma">
+            Turma
+        </p>
+
+
+        <div class="dados-aluno">
+
+            <div class="dado">
+                <span>Matrícula</span>
+                <strong id="modalMatricula"></strong>
+            </div>
+
+            <div class="dado">
+                <span>Telefone do aluno</span>
+                <strong id="modalTelefone"></strong>
+            </div>
+
+            <div class="dado">
+                <span>Responsável</span>
+                <strong id="modalResponsavel"></strong>
+            </div>
+
+            <div class="dado">
+                <span>Telefone do responsável</span>
+                <strong id="modalTelefoneResponsavel"></strong>
+            </div>
+
+        </div>
+
+
+        <div class="status-modal">
+
+            <span>Status atual</span>
+
+            <strong id="modalStatus">
+                Pendente
+            </strong>
+
+        </div>
+
+
+        <div class="acoes-modal">
+
+            <button
+                class="btn-embarcar"
+                id="btnEmbarcar"
+            >
+                🚌 Embarcar
+            </button>
+
+            <button
+                class="btn-desembarcar"
+                id="btnDesembarcar"
+            >
+                🚶 Desembarcar
+            </button>
+
+            <button
+                class="btn-reembarcar"
+                id="btnReembarcar"
+            >
+                🔄 Reembarcar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- MENU INFERIOR -->
+
+    <nav class="menu-inferior">
+
+        <a href="index.html" class="menu-item">
+
+            🏠
+
+            <span>Início</span>
+
+        </a>
+
+
+        <a href="alunos.html" class="menu-item ativo">
+
+            👨‍🎓
+
+            <span>Alunos</span>
+
+        </a>
+
+
+        <a href="#" class="menu-item">
+
+            📊
+
+            <span>Relatórios</span>
+
+        </a>
+
+
+        <a href="#" class="menu-item">
+
+            ⚙️
+
+            <span>Configurações</span>
+
+        </a>
+
+    </nav>
+
+<script src="dados.js"></script>
+<script src="alunos.js"></script>
+</body>
+
+</html>

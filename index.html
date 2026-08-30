@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Viagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <h1>🚌 Controle de Viagem</h1>
+
+        <p>Visita Técnica – UNICAMP</p>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- CONTADORES -->
+
+    <section class="status-viagem">
+
+        <div class="status-card total">
+
+            <h2>45</h2>
+
+            <p>Total de alunos</p>
+
+        </div>
+
+
+        <div class="status-card embarcados">
+
+            <h2>38</h2>
+
+            <p>Embarcados</p>
+
+        </div>
+
+
+        <div class="status-card pendentes">
+
+            <h2>7</h2>
+
+            <p>Pendentes</p>
+
+        </div>
+
+
+        <div class="status-card desembarcados">
+
+            <h2>0</h2>
+
+            <p>Desembarcados</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTÕES PRINCIPAIS -->
+
+    <section class="acoes">
+
+        <button class="btn-scan">
+            <a href="scanner.html" style="text-decoration: none; color: inherit;">
+            📷 Escanear crachá
+            </a>
+        </button>
+
+
+        <button class="btn-manual">
+            <a href="scanner.html" style="text-decoration: none; color: inherit;">
+            👤 Registrar manualmente
+            </a>
+        </button>
+
+    </section>
+
+
+    <!-- BUSCA -->
+
+    <section class="busca">
+
+        <input
+            type="text"
+            placeholder="🔎 Buscar aluno pelo nome ou matrícula..."
+        >
+
+    </section>
+
+
+    <!-- LISTA DE ALUNOS -->
+
+    <section class="lista-alunos">
+
+        <h2>Alunos</h2>
+
+
+        <div class="aluno">
+
+            <div class="aluno-info">
+
+                <div class="avatar">
+
+                    AC
+
+                </div>
+
+                <div>
+
+                    <div class="nome">
+
+                        Ana Carolina Silva
+
+                    </div>
+
+                    <div class="turma">
+
+                        2º Ano A • Matrícula: 123456
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <span class="status embarcado">
+
+                ✓ Embarcado
+
+            </span>
+
+        </div>
+
+
+        <div class="aluno">
+
+            <div class="aluno-info">
+
+                <div class="avatar">
+
+                    JP
+
+                </div>
+
+                <div>
+
+                    <div class="nome">
+
+                        João Pedro Santos
+
+                    </div>
+
+                    <div class="turma">
+
+                        2º Ano B • Matrícula: 123457
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <span class="status pendente">
+
+                Pendente
+
+            </span>
+
+        </div>
+
+
+        <div class="aluno">
+
+            <div class="aluno-info">
+
+                <div class="avatar">
+
+                    MS
+
+                </div>
+
+                <div>
+
+                    <div class="nome">
+
+                        Maria Souza Oliveira
+
+                    </div>
+
+                    <div class="turma">
+
+                        2º Ano A • Matrícula: 123458
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <span class="status desembarcado">
+
+                Desembarcado
+
+            </span>
+
+        </div>
+
+
+        <div class="aluno">
+
+            <div class="aluno-info">
+
+                <div class="avatar">
+
+                    RL
+
+                </div>
+
+                <div>
+
+                    <div class="nome">
+
+                        Rafael Lima Costa
+
+                    </div>
+
+                    <div class="turma">
+
+                        2º Ano C • Matrícula: 123459
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <span class="status embarcado">
+
+                ✓ Embarcado
+
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+    <div class="espaco-menu"></div>
+
+
+</main>
+
+
+<!-- MENU INFERIOR -->
+
+<nav class="menu-inferior">
+
+    <div class="menu-item ativo">
+
+        🏠
+
+        <br>
+
+        Início
+
+    </div>
+
+
+    <div class="menu-item">
+
+        👨‍🎓
+
+        <br>
+
+        Alunos
+
+    </div>
+
+
+    <div class="menu-item">
+
+        📊
+
+        <br>
+
+        Relatórios
+
+    </div>
+
+
+    <div class="menu-item">
+
+        ⚙️
+
+        <br>
+
+        Configurações
+
+    </div>
+
+</nav>
+
+
+</body>
+<script src="dados.js"></script>
+<script src="alunos.js"></script>
+</html>

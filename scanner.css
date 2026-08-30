@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* CONFIGURAÇÕES GERAIS */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f6f9;
+    color: #333;
+
+    padding-bottom: 90px;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #1e3a5f;
+    color: white;
+
+    padding: 20px;
+}
+
+
+.header-content {
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+header p {
+    opacity: 0.8;
+}
+
+
+.voltar {
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+
+.voltar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+
+/* CARD DO SCANNER */
+
+.scanner-card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.scanner-card h2 {
+    color: #1e3a5f;
+
+    margin-bottom: 10px;
+}
+
+
+.descricao {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* ÁREA DA CÂMERA */
+
+.camera {
+    width: 100%;
+
+    height: 320px;
+
+    background-color: #1b1b1b;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+
+/* ÍCONE DA CÂMERA */
+
+.camera-icone {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.8;
+}
+
+
+.camera p {
+    color: #ccc;
+}
+
+
+/* LINHAS DO SCANNER */
+
+.linha {
+    position: absolute;
+
+    background-color: #198754;
+}
+
+
+/* TOPO */
+
+.linha-topo {
+    width: 60%;
+
+    height: 3px;
+
+    top: 25%;
+}
+
+
+/* BAIXO */
+
+.linha-baixo {
+    width: 60%;
+
+    height: 3px;
+
+    bottom: 25%;
+}
+
+
+/* ESQUERDA */
+
+.linha-esquerda {
+    width: 3px;
+
+    height: 50%;
+
+    left: 20%;
+}
+
+
+/* DIREITA */
+
+.linha-direita {
+    width: 3px;
+
+    height: 50%;
+
+    right: 20%;
+}
+
+
+/* BOTÃO DA CÂMERA */
+
+.btn-camera {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-camera:hover {
+    background-color: #152b47;
+
+    transform: translateY(-2px);
+}
+
+
+/* SEPARADOR */
+
+.separador {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 30px 0;
+
+    color: #888;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.separador::before,
+.separador::after {
+    content: "";
+
+    height: 1px;
+
+    background-color: #ddd;
+
+    flex: 1;
+
+    margin: 0 15px;
+}
+
+
+/* BUSCA MANUAL */
+
+.busca-manual {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 20px;
+}
+
+
+.busca-manual h2 {
+    color: #1e3a5f;
+
+    margin-bottom: 8px;
+}
+
+
+.busca-manual p {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+.campo-busca {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.campo-busca input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.campo-busca input:focus {
+    border-color: #1e3a5f;
+}
+
+
+.campo-busca button {
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* RESULTADO */
+
+.resultado {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 20px;
+}
+
+
+.resultado-icone {
+    width: 60px;
+    height: 60px;
+
+    background-color: #f1f3f6;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+}
+
+
+.resultado-info h2 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+    color: #1e3a5f;
+}
+
+
+.resultado-info p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* INSTRUÇÕES */
+
+.instrucoes {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.instrucoes h2 {
+    color: #1e3a5f;
+
+    margin-bottom: 20px;
+}
+
+
+.instrucoes ol {
+    padding-left: 20px;
+}
+
+
+.instrucoes li {
+    margin-bottom: 12px;
+
+    color: #555;
+}
+
+
+/* MENU INFERIOR */
+
+.menu-inferior {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: white;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 12px;
+
+    z-index: 10;
+}
+
+
+.menu-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+
+.menu-item.ativo {
+    color: #1e3a5f;
+
+    font-weight: bold;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    .header-content {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .camera {
+        height: 250px;
+    }
+
+
+    .campo-busca {
+        flex-direction: column;
+    }
+
+
+    .campo-busca button {
+        width: 100%;
+    }
+
+
+    .resultado {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+.resultado-busca {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.aluno-encontrado {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.aluno-encontrado h3 {
+    margin: 0 0 6px;
+}
+
+.aluno-encontrado p {
+    margin: 4px 0;
+    color: #666;
+}
+
+.acoes-registro {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.acoes-registro button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-registrar-embarque {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.btn-registrar-desembarque {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.btn-registrar-reembarque {
+    background: #e2d9f3;
+    color: #5a3d8a;
+}
+
+.camera {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+#video {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+
+}
+
+
+.camera-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}

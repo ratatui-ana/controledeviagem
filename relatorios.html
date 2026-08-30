@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relatórios - Controle de Viagem</title>
+
+    <link rel="stylesheet" href="relatorios.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>📊 Relatórios</h1>
+
+                <p>Visita Técnica – UNICAMP</p>
+
+            </div>
+
+            <a href="index.html" class="voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- FILTRO DA VIAGEM -->
+
+        <section class="filtro">
+
+            <div class="campo">
+
+                <label for="viagem">
+                    Viagem
+                </label>
+
+                <select id="viagem">
+
+                    <option>
+                        Visita Técnica – UNICAMP
+                    </option>
+
+                    <option>
+                        Viagem de Estudos – Curitiba
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="data">
+                    Data
+                </label>
+
+                <input
+                    type="date"
+                    id="data"
+                    value="2026-08-13"
+                >
+
+            </div>
+
+
+            <button class="btn-filtrar">
+                Aplicar filtro
+            </button>
+
+        </section>
+
+
+        <!-- RESUMO -->
+
+        <section class="resumo">
+
+            <div class="card-resumo">
+
+                <span class="icone">
+                    👨‍🎓
+                </span>
+
+                <div>
+
+                    <strong>45</strong>
+
+                    <p>Total de alunos</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo verde">
+
+                <span class="icone">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>38</strong>
+
+                    <p>Embarcados</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo vermelho">
+
+                <span class="icone">
+                    !
+                </span>
+
+                <div>
+
+                    <strong>7</strong>
+
+                    <p>Pendentes</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo roxo">
+
+                <span class="icone">
+                    📍
+                </span>
+
+                <div>
+
+                    <strong>0</strong>
+
+                    <p>Desembarcados</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERCENTUAL -->
+
+        <section class="card">
+
+            <div class="titulo-card">
+
+                <h2>Presença</h2>
+
+                <strong>84,4%</strong>
+
+            </div>
+
+
+            <div class="barra">
+
+                <div class="progresso"></div>
+
+            </div>
+
+
+            <p class="legenda">
+                38 de 45 alunos registrados como embarcados.
+            </p>
+
+        </section>
+
+
+        <!-- PENDÊNCIAS -->
+
+        <section class="card">
+
+            <div class="titulo-card">
+
+                <h2>Alunos pendentes</h2>
+
+                <span class="badge">
+                    7 pendentes
+                </span>
+
+            </div>
+
+
+            <div class="aluno-pendente">
+
+                <div class="avatar">
+                    JP
+                </div>
+
+                <div class="aluno-info">
+
+                    <strong>
+                        João Pedro Santos
+                    </strong>
+
+                    <span>
+                        2º Ano B • 123457
+                    </span>
+
+                </div>
+
+                <span class="status pendente">
+                    Pendente
+                </span>
+
+            </div>
+
+
+            <div class="aluno-pendente">
+
+                <div class="avatar">
+                    LM
+                </div>
+
+                <div class="aluno-info">
+
+                    <strong>
+                        Lucas Martins
+                    </strong>
+
+                    <span>
+                        2º Ano B • 123460
+                    </span>
+
+                </div>
+
+                <span class="status pendente">
+                    Pendente
+                </span>
+
+            </div>
+
+
+            <div class="aluno-pendente">
+
+                <div class="avatar">
+                    BR
+                </div>
+
+                <div class="aluno-info">
+
+                    <strong>
+                        Beatriz Rodrigues
+                    </strong>
+
+                    <span>
+                        2º Ano A • 123461
+                    </span>
+
+                </div>
+
+                <span class="status pendente">
+                    Pendente
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- HISTÓRICO -->
+
+        <section class="card">
+
+            <div class="titulo-card">
+
+                <h2>Últimos registros</h2>
+
+            </div>
+
+
+            <div class="registro">
+
+                <div class="registro-icone embarque">
+                    🚌
+                </div>
+
+                <div>
+
+                    <strong>
+                        Ana Carolina Silva
+                    </strong>
+
+                    <p>
+                        Embarque registrado às 06:42
+                    </p>
+
+                </div>
+
+                <span>
+                    06:42
+                </span>
+
+            </div>
+
+
+            <div class="registro">
+
+                <div class="registro-icone embarque">
+                    🚌
+                </div>
+
+                <div>
+
+                    <strong>
+                        Rafael Lima Costa
+                    </strong>
+
+                    <p>
+                        Embarque registrado às 06:44
+                    </p>
+
+                </div>
+
+                <span>
+                    06:44
+                </span>
+
+            </div>
+
+
+            <div class="registro">
+
+                <div class="registro-icone desembarque">
+                    📍
+                </div>
+
+                <div>
+
+                    <strong>
+                        Maria Souza Oliveira
+                    </strong>
+
+                    <p>
+                        Desembarque registrado às 08:15
+                    </p>
+
+                </div>
+
+                <span>
+                    08:15
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTÕES DE EXPORTAÇÃO -->
+
+        <section class="exportacao">
+
+            <button class="btn-pdf">
+                📄 Gerar PDF
+            </button>
+
+            <button class="btn-excel">
+                📊 Exportar Excel
+            </button>
+
+            <button class="btn-imprimir">
+                🖨️ Imprimir
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MENU INFERIOR -->
+
+    <nav class="menu-inferior">
+
+        <a href="index.html" class="menu-item">
+
+            🏠
+
+            <span>Início</span>
+
+        </a>
+
+
+        <a href="alunos.html" class="menu-item">
+
+            👨‍🎓
+
+            <span>Alunos</span>
+
+        </a>
+
+
+        <a href="scanner.html" class="menu-item">
+
+            📷
+
+            <span>Scanner</span>
+
+        </a>
+
+
+        <a href="relatorios.html" class="menu-item ativo">
+
+            📊
+
+            <span>Relatórios</span>
+
+        </a>
+
+    </nav>
+
+
+</body>
+
+</html>

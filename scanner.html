@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scanner - Controle de Viagem</title>
+
+    <link rel="stylesheet" href="scanner.css">
+    
+</head>
+
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>📷 Scanner</h1>
+
+                <p>Leia o código do crachá do aluno</p>
+
+            </div>
+
+            <a href="index.html" class="voltar">
+
+                ← Voltar
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- ÁREA DO SCANNER -->
+
+        <section class="scanner-card">
+
+            <h2>Escanear crachá</h2>
+
+            <p class="descricao">
+
+                Posicione o código de barras ou QR Code dentro da área abaixo.
+
+            </p>
+
+
+           <div class="camera" id="camera">
+
+    <video id="video" autoplay playsinline></video>
+
+    <div class="linha linha-topo"></div>
+    <div class="linha linha-direita"></div>
+    <div class="linha linha-baixo"></div>
+    <div class="linha linha-esquerda"></div>
+
+    <div class="camera-placeholder" id="cameraPlaceholder">
+
+        <div class="camera-icone">
+            📷
+        </div>
+
+        <p id="statusCamera">
+            Câmera aguardando...
+        </p>
+
+    </div>
+
+</div>
+
+
+            <button class="btn-camera" id="btnCamera">
+
+                📷 Abrir câmera
+
+            </button>
+
+        </section>
+
+
+        <!-- OU -->
+
+        <div class="separador">
+
+            <span>OU</span>
+
+        </div>
+
+
+        <!-- BUSCA MANUAL -->
+
+        <section class="busca-manual">
+
+            <h2>Registro manual</h2>
+
+            <p>
+
+                Digite o código ou a matrícula do aluno.
+
+            </p>
+
+
+            <div class="campo-busca">
+
+                <input
+                    type="text"
+                    id="matriculaBusca"
+                    placeholder="Digite a matrícula..."
+                >
+
+                <button id="btnBuscarAluno">
+
+                    Buscar
+
+                </button>
+
+            </div>
+
+        </section>
+        <div id="resultadoBusca" class="resultado-busca"></div>
+
+
+        <!-- RESULTADO -->
+
+        <section class="resultado">
+
+            <div class="resultado-icone">
+
+                👨‍🎓
+
+            </div>
+
+
+            <div class="resultado-info">
+
+                <h2>Aguardando leitura</h2>
+
+                <p>
+
+                    Nenhum aluno foi identificado ainda.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSTRUÇÕES -->
+
+        <section class="instrucoes">
+
+            <h2>Como usar</h2>
+
+            <ol>
+
+                <li>
+                    Clique em <strong>"Abrir câmera"</strong>.
+                </li>
+
+                <li>
+                    Aponte a câmera para o crachá do aluno.
+                </li>
+
+                <li>
+                    Aguarde a identificação.
+                </li>
+
+                <li>
+                    Confirme o registro de embarque ou desembarque.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MENU INFERIOR -->
+
+    <nav class="menu-inferior">
+
+        <a href="index.html" class="menu-item">
+
+            🏠
+
+            <span>Início</span>
+
+        </a>
+
+
+        <a href="alunos.html" class="menu-item">
+
+            👨‍🎓
+
+            <span>Alunos</span>
+
+        </a>
+
+
+        <a href="scanner.html" class="menu-item ativo">
+
+            📷
+
+            <span>Scanner</span>
+
+        </a>
+
+
+        <a href="#" class="menu-item">
+
+            ⚙️
+
+            <span>Configurações</span>
+
+        </a>
+
+    </nav>
+<script src="https://unpkg.com/@zxing/browser@latest"></script>
+
+<script src="dados.js"></script>
+<script src="scanner.js"></script>
+</body>
+
+</html>

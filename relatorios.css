@@ -1,0 +1,617 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f6f9;
+
+    color: #333;
+
+    padding-bottom: 90px;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #1e3a5f;
+
+    color: white;
+
+    padding: 20px;
+}
+
+
+.header-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+header p {
+    opacity: 0.8;
+}
+
+
+.voltar {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 8px;
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+
+/* FILTRO */
+
+.filtro {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 200px auto;
+
+    gap: 15px;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.campo label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+.campo select,
+.campo input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+
+.btn-filtrar {
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* RESUMO */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.card-resumo {
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.card-resumo .icone {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: #e8edf3;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+
+.card-resumo strong {
+    display: block;
+
+    font-size: 25px;
+
+    color: #1e3a5f;
+}
+
+
+.card-resumo p {
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+
+.card-resumo.verde strong {
+    color: #198754;
+}
+
+
+.card-resumo.vermelho strong {
+    color: #dc3545;
+}
+
+
+.card-resumo.roxo strong {
+    color: #6f42c1;
+}
+
+
+/* CARDS */
+
+.card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.titulo-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.titulo-card h2 {
+    color: #1e3a5f;
+
+    font-size: 19px;
+}
+
+
+.titulo-card > strong {
+    font-size: 20px;
+
+    color: #198754;
+}
+
+
+/* BARRA DE PROGRESSO */
+
+.barra {
+    width: 100%;
+
+    height: 15px;
+
+    background-color: #e9ecef;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progresso {
+    width: 84.4%;
+
+    height: 100%;
+
+    background-color: #198754;
+
+    border-radius: 20px;
+}
+
+
+.legenda {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+}
+
+
+/* BADGE */
+
+.badge {
+    background-color: #f8d7da;
+
+    color: #842029;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ALUNOS PENDENTES */
+
+.aluno-pendente {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.aluno-pendente:last-child {
+    border-bottom: none;
+}
+
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: #1e3a5f;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+
+.aluno-info {
+    flex: 1;
+}
+
+
+.aluno-info strong {
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+.aluno-info span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+.status {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.status.pendente {
+    background-color: #f8d7da;
+
+    color: #842029;
+}
+
+
+/* REGISTROS */
+
+.registro {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.registro:last-child {
+    border-bottom: none;
+}
+
+
+.registro-icone {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.registro-icone.embarque {
+    background-color: #d1e7dd;
+}
+
+
+.registro-icone.desembarque {
+    background-color: #e2d9f3;
+}
+
+
+.registro div:nth-child(2) {
+    flex: 1;
+}
+
+
+.registro p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+.registro > span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* EXPORTAÇÃO */
+
+.exportacao {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.exportacao button {
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.btn-pdf {
+    background-color: #dc3545;
+
+    color: white;
+}
+
+
+.btn-excel {
+    background-color: #198754;
+
+    color: white;
+}
+
+
+.btn-imprimir {
+    background-color: #1e3a5f;
+
+    color: white;
+}
+
+
+/* MENU INFERIOR */
+
+.menu-inferior {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background-color: white;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 12px;
+
+    z-index: 10;
+}
+
+
+.menu-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+
+.menu-item.ativo {
+    color: #1e3a5f;
+
+    font-weight: bold;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .resumo {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .filtro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .btn-filtrar {
+        grid-column: span 2;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .filtro {
+        grid-template-columns: 1fr;
+    }
+
+
+    .btn-filtrar {
+        grid-column: auto;
+
+        width: 100%;
+    }
+
+
+    .aluno-pendente {
+        flex-wrap: wrap;
+    }
+
+
+    .aluno-pendente .status {
+        margin-left: 60px;
+    }
+
+
+    .registro {
+        align-items: flex-start;
+    }
+
+
+    .registro > span {
+        display: none;
+    }
+
+
+    .exportacao {
+        flex-direction: column;
+    }
+
+}

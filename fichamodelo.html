@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ficha do Aluno - Controle de Viagem</title>
+
+    <link rel="stylesheet" href="fichamodelo.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>Ficha do Aluno</h1>
+
+                <p>Controle de Viagem</p>
+
+            </div>
+
+            <a href="alunos.html" class="voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- PERFIL DO ALUNO -->
+
+        <section class="perfil">
+
+            <div class="avatar grande">
+
+                AC
+
+            </div>
+
+
+            <div class="perfil-info">
+
+                <h2>Ana Carolina Silva</h2>
+
+                <p>2º Ano A</p>
+
+                <p>Matrícula: 123456</p>
+
+            </div>
+
+
+            <div class="status embarcado">
+
+                ✓ Embarcado
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <section class="card">
+
+            <h2>Informações do aluno</h2>
+
+
+            <div class="informacoes-grid">
+
+
+                <div class="info">
+
+                    <span class="titulo">
+                        Matrícula
+                    </span>
+
+                    <strong>
+                        123456
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <span class="titulo">
+                        Turma
+                    </span>
+
+                    <strong>
+                        2º Ano A
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <span class="titulo">
+                        Responsável
+                    </span>
+
+                    <strong>
+                        Maria Silva
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <span class="titulo">
+                        Telefone
+                    </span>
+
+                    <strong>
+                        (42) 99999-9999
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- AÇÕES -->
+
+        <section class="card">
+
+            <h2>Ações</h2>
+
+
+            <div class="acoes">
+
+                <button class="btn embarcar">
+
+                    🚌 Registrar embarque
+
+                </button>
+
+
+                <button class="btn desembarcar">
+
+                    📍 Registrar desembarque
+
+                </button>
+
+
+                <button class="btn reembarcar">
+
+                    🔄 Registrar reembarque
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTÓRICO -->
+
+        <section class="card">
+
+            <h2>Histórico da viagem</h2>
+
+
+            <div class="historico">
+
+
+                <div class="evento">
+
+                    <div class="icone embarque">
+
+                        🚌
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>Embarque registrado</h3>
+
+                        <p>
+                            06:42 — Ponta Grossa
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <div class="icone">
+
+                        ⏳
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>Aguardando próximo registro</h3>
+
+                        <p>
+                            Nenhum desembarque registrado ainda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- IDENTIFICAÇÃO -->
+
+        <section class="card identificacao">
+
+            <h2>Identificação</h2>
+
+            <p>
+                Código do aluno
+            </p>
+
+            <div class="codigo">
+
+                123456
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MENU INFERIOR -->
+
+    <nav class="menu-inferior">
+
+        <a href="index.html" class="menu-item">
+
+            🏠
+
+            <span>Início</span>
+
+        </a>
+
+
+        <a href="alunos.html" class="menu-item ativo">
+
+            👨‍🎓
+
+            <span>Alunos</span>
+
+        </a>
+
+
+        <a href="#" class="menu-item">
+
+            📊
+
+            <span>Relatórios</span>
+
+        </a>
+
+
+        <a href="#" class="menu-item">
+
+            ⚙️
+
+            <span>Configurações</span>
+
+        </a>
+
+    </nav>
+
+<h1 id="nomeAluno">Nome do aluno</h1>
+
+<p id="turmaAluno">Turma</p>
+
+<p id="matriculaAluno">Matrícula</p>
+
+<p id="telefoneAluno">Telefone</p>
+
+<p id="responsavelAluno">Responsável</p>
+
+<p id="telefoneResponsavel">Telefone do responsável</p>
+
+<p id="statusAluno">Status</p>
+
+<p id="ultimoRegistro">Último registro</p>
+
+<script src="dados.js"></script>
+<script src="aluno.js"></script>
+</body>
+
+</html>
