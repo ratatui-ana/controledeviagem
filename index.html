@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3a5f">
+
+    <title>Controle de Viagens Pedagógicas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🚌 Controle de Viagens</h1>
+        <p>Gerenciador de Viagens Pedagógicas</p>
+    </div>
+</header>
+
+<main class="container painel-geral">
+
+    <!-- ==================================================
+         CABEÇALHO DO PAINEL
+         ================================================== -->
+
+    <section class="painel-boas-vindas">
+        <div>
+            <span class="rotulo-viagem">GESTÃO ESCOLAR</span>
+            <h2>Painel de viagens</h2>
+            <p>Gerencie suas viagens pedagógicas em um só lugar.</p>
+        </div>
+
+        <button
+            id="btnNovaViagem"
+            type="button"
+            class="btn-nova-viagem"
+        >
+            ＋ Nova viagem
+        </button>
+    </section>
+
+
+    <!-- ==================================================
+         INDICADORES GERAIS
+         ================================================== -->
+
+    <section class="indicadores-gerais" aria-label="Resumo das viagens">
+
+        <article class="indicador">
+            <div class="indicador-icone azul">🗓️</div>
+            <div>
+                <p>Próximas viagens</p>
+                <h3 id="resumoProximas">0</h3>
+            </div>
+        </article>
+
+        <article class="indicador">
+            <div class="indicador-icone laranja">🚌</div>
+            <div>
+                <p>Em andamento</p>
+                <h3 id="resumoAndamento">0</h3>
+            </div>
+        </article>
+
+        <article class="indicador">
+            <div class="indicador-icone verde">✓</div>
+            <div>
+                <p>Realizadas</p>
+                <h3 id="resumoRealizadas">0</h3>
+            </div>
+        </article>
+
+        <article class="indicador">
+            <div class="indicador-icone roxo">📋</div>
+            <div>
+                <p>Total de viagens</p>
+                <h3 id="resumoTotalViagens">0</h3>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- ==================================================
+         BUSCA E FILTROS
+         ================================================== -->
+
+    <section class="filtros-viagens">
+        <div>
+            <h2>Todas as viagens</h2>
+            <p>Consulte as atividades programadas e o histórico.</p>
+        </div>
+
+        <div class="filtros-controles">
+            <label for="buscaViagens" class="visualmente-oculto">
+                Buscar viagem
+            </label>
+
+            <input
+                type="search"
+                id="buscaViagens"
+                placeholder="🔎 Buscar por nome ou destino..."
+            >
+
+            <label for="filtroSituacao" class="visualmente-oculto">
+                Filtrar por situação
+            </label>
+
+            <select id="filtroSituacao">
+                <option value="todas">Todas as situações</option>
+                <option value="proxima">Próximas</option>
+                <option value="andamento">Em andamento</option>
+                <option value="realizada">Realizadas</option>
+            </select>
+        </div>
+    </section>
+
+
+    <!-- ==================================================
+         PRÓXIMAS VIAGENS
+         ================================================== -->
+
+    <section class="secao-viagens">
+        <div class="titulo-secao">
+            <div>
+                <h2>🗓️ Próximas viagens</h2>
+                <p>Atividades programadas para os próximos dias.</p>
+            </div>
+        </div>
+
+        <div id="listaProximas" class="grade-viagens">
+            <p class="sem-resultados">
+                Carregando próximas viagens...
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ==================================================
+         VIAGENS EM ANDAMENTO
+         ================================================== -->
+
+    <section class="secao-viagens">
+        <div class="titulo-secao">
+            <div>
+                <h2>🚌 Viagens em andamento</h2>
+                <p>Acesse o controle operacional das viagens abertas.</p>
+            </div>
+        </div>
+
+        <div id="listaEmAndamento" class="grade-viagens">
+            <p class="sem-resultados">
+                Carregando viagens em andamento...
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ==================================================
+         HISTÓRICO DE VIAGENS
+         ================================================== -->
+
+    <section class="secao-viagens historico-viagens">
+        <div class="titulo-secao">
+            <div>
+                <h2>✓ Viagens realizadas</h2>
+                <p>Consulte as informações e os registros de atividades concluídas.</p>
+            </div>
+        </div>
+
+        <div id="listaRealizadas" class="grade-viagens">
+            <p class="sem-resultados">
+                Carregando histórico...
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ==================================================
+         FORMULÁRIO DE NOVA VIAGEM
+         Mantém os IDs usados pelo index.js atual.
+         ================================================== -->
+
+    <section
+        id="painelNovaViagem"
+        class="painel-nova-viagem"
+        aria-labelledby="tituloNovaViagem"
+    >
+        <div class="cabecalho-formulario">
+            <div>
+                <span class="rotulo-viagem">CADASTRO</span>
+                <h2 id="tituloNovaViagem">Nova viagem pedagógica</h2>
+                <p>Preencha os dados e escolha os alunos participantes.</p>
+            </div>
+        </div>
+
+        <form id="novaViagemForm">
+
+            <div class="campos-viagem">
+
+                <div>
+                    <label for="novaViagemNome">
+                        Nome da viagem *
+                    </label>
+
+                    <input
+                        id="novaViagemNome"
+                        required
+                        maxlength="150"
+                        placeholder="Ex.: Visita técnica à UNICAMP"
+                    >
+                </div>
+
+                <div>
+                    <label for="novaViagemData">Data da viagem</label>
+
+                    <input
+                        id="novaViagemData"
+                        type="date"
+                    >
+                </div>
+
+                <div>
+                    <label for="novaViagemLocal">Destino</label>
+
+                    <input
+                        id="novaViagemLocal"
+                        maxlength="150"
+                        placeholder="Ex.: Campinas - SP"
+                    >
+                </div>
+
+                <div>
+                    <label for="novaViagemDescricao">Descrição</label>
+
+                    <input
+                        id="novaViagemDescricao"
+                        maxlength="500"
+                        placeholder="Objetivo pedagógico e observações"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="participantes-viagem">
+
+                <div class="participantes-cabecalho">
+                    <label>Alunos participantes</label>
+
+                    <button
+                        type="button"
+                        id="selecionarTodosAlunos"
+                    >
+                        Desmarcar todos
+                    </button>
+                </div>
+
+                <div
+                    id="listaParticipantesNovaViagem"
+                    class="lista-participantes"
+                ></div>
+
+                <small>
+                    Selecione os alunos que participarão desta viagem.
+                </small>
+
+            </div>
+
+
+            <div class="botoes-form-viagem">
+                <button type="submit" class="btn-criar-viagem">
+                    Criar viagem
+                </button>
+
+                <button
+                    type="button"
+                    id="btnCancelarNovaViagem"
+                    class="btn-cancelar-viagem"
+                >
+                    Cancelar
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+
+    <!-- ==================================================
+         CONTROLE OPERACIONAL
+         Preserva os elementos da antiga tela inicial.
+         ================================================== -->
+
+    <section id="painelOperacional" class="painel-operacional">
+
+        <div class="cabecalho-operacional">
+            <div>
+                <span class="rotulo-viagem">CONTROLE OPERACIONAL</span>
+                <h2>Alunos da viagem selecionada</h2>
+                <p>
+                    Consulte os registros e acompanhe os embarques.
+                </p>
+            </div>
+        </div>
+
+        <section class="gestao-viagem">
+            <div class="gestao-viagem-topo">
+
+                <div>
+                    <span class="rotulo-viagem">VIAGEM SELECIONADA</span>
+
+                    <h2 id="nomeViagemAtiva">
+                        Visita Técnica – UNICAMP
+                    </h2>
+
+                    <p id="infoViagemAtiva">
+                        Data e destino
+                    </p>
+                </div>
+
+                <div class="acoes-viagem">
+                    <label for="seletorViagem" class="visualmente-oculto">
+                        Selecionar viagem
+                    </label>
+
+                    <select
+                        id="seletorViagem"
+                        aria-label="Selecionar viagem"
+                    ></select>
+
+                    <button
+                        type="button"
+                        id="btnExcluirViagem"
+                        class="btn-excluir-viagem"
+                    >
+                        Excluir
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTADORES DA VIAGEM SELECIONADA -->
+
+        <section class="status-viagem">
+
+            <div class="status-card total">
+                <h2 id="totalAlunos">0</h2>
+                <p>Total de alunos</p>
+            </div>
+
+            <div class="status-card embarcados">
+                <h2 id="totalEmbarcados">0</h2>
+                <p>Embarcados</p>
+            </div>
+
+            <div class="status-card pendentes">
+                <h2 id="totalPendentes">0</h2>
+                <p>Pendentes</p>
+            </div>
+
+            <div class="status-card desembarcados">
+                <h2 id="totalDesembarcados">0</h2>
+                <p>Desembarcados</p>
+            </div>
+
+        </section>
+
+
+        <!-- AÇÕES OPERACIONAIS -->
+
+        <section class="acoes">
+
+            <a href="scanner.html" class="acao-link btn-scan">
+                📷 Escanear crachá
+            </a>
+
+            <a href="scanner.html" class="acao-link btn-manual">
+                👤 Registrar manualmente
+            </a>
+
+        </section>
+
+
+        <!-- BUSCA DE ALUNOS -->
+
+        <section class="busca">
+            <label for="buscaInicio" class="visualmente-oculto">
+                Buscar aluno por nome ou matrícula
+            </label>
+
+            <input
+                type="search"
+                id="buscaInicio"
+                placeholder="🔎 Buscar aluno pelo nome ou matrícula..."
+            >
+        </section>
+
+
+        <!-- LISTA DE ALUNOS -->
+
+        <section class="lista-alunos">
+            <h2>Participantes</h2>
+            <div id="listaInicio"></div>
+        </section>
+
+    </section>
+
+    <div class="espaco-menu"></div>
+
+</main>
+
+
+<!-- ======================================================
+     JANELA DE DETALHES
+     O preenchimento será implementado no JavaScript.
+     ====================================================== -->
+
+<dialog id="modalDetalhesViagem" class="modal-detalhes">
+    <div class="modal-conteudo">
+
+        <div class="modal-cabecalho">
+            <div>
+                <span class="rotulo-viagem">HISTÓRICO</span>
+                <h2 id="detalhesNomeViagem">Detalhes da viagem</h2>
+            </div>
+
+            <button
+                type="button"
+                id="btnFecharDetalhes"
+                class="btn-fechar-modal"
+                aria-label="Fechar detalhes"
+            >
+                ✕
+            </button>
+        </div>
+
+        <div id="conteudoDetalhesViagem">
+            <p>Selecione uma viagem para consultar seus detalhes.</p>
+        </div>
+
+    </div>
+</dialog>
+
+
+<!-- ======================================================
+     NAVEGAÇÃO
+     ====================================================== -->
+
+<nav class="menu-inferior" aria-label="Navegação principal">
+
+    <a href="index.html" class="menu-item ativo" aria-current="page">
+        🏠
+        <span>Início</span>
+    </a>
+
+    <a href="alunos.html" class="menu-item">
+        👨‍🎓
+        <span>Alunos</span>
+    </a>
+
+    <a href="relatorios.html" class="menu-item">
+        📊
+        <span>Relatórios</span>
+    </a>
+
+    <a href="index.html#painelOperacional" class="menu-item">
+        ⚙️
+        <span>Controle</span>
+    </a>
+
+</nav>
+
+
+<!-- Os arquivos de dados e funções existentes são mantidos. -->
+
+<script src="dados.js"></script>
+<script src="viagens.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

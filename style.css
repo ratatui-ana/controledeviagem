@@ -1,0 +1,1858 @@
+
+/* =========================================================
+   GERENCIADOR DE VIAGENS PEDAGÓGICAS
+   Arquivo: style.css
+
+   Identidade visual:
+   - Azul institucional
+   - Fundo claro
+   - Cartões com cantos arredondados
+   - Layout adaptável para celular e computador
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+:root {
+    --azul-escuro: #1e3a5f;
+    --azul: #2563a6;
+    --azul-claro: #e8f1fc;
+
+    --verde: #198754;
+    --verde-claro: #e6f5ec;
+
+    --laranja: #c77712;
+    --laranja-claro: #fff2dc;
+
+    --vermelho: #c0392b;
+    --vermelho-claro: #fdecea;
+
+    --roxo: #7651a8;
+    --roxo-claro: #f0eafb;
+
+    --fundo: #f3f6fa;
+    --branco: #ffffff;
+
+    --texto: #263445;
+    --texto-secundario: #68778a;
+    --borda: #dfe6ee;
+
+    --sombra: 0 4px 16px rgba(30, 58, 95, 0.07);
+    --sombra-hover: 0 8px 24px rgba(30, 58, 95, 0.12);
+
+    --raio: 14px;
+    --transicao: 0.2s ease;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #83b8f4;
+    outline-offset: 3px;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: anywhere;
+}
+
+
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================================
+   2. CABEÇALHO
+   ========================================================= */
+
+header {
+    background: linear-gradient(
+        120deg,
+        var(--azul-escuro),
+        #285783
+    );
+    color: var(--branco);
+    padding: 25px 20px;
+    box-shadow: 0 3px 12px rgba(20, 40, 65, 0.15);
+}
+
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header-content h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+
+.header-content p {
+    margin: 5px 0 0;
+    color: #dce8f5;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   3. CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 22px 35px;
+}
+
+
+.painel-geral {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+
+/* =========================================================
+   4. APRESENTAÇÃO DO PAINEL
+   ========================================================= */
+
+.painel-boas-vindas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 27px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+
+.rotulo-viagem {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+
+.painel-boas-vindas h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 27px;
+}
+
+
+.painel-boas-vindas p {
+    margin: 7px 0 0;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+
+.btn-nova-viagem {
+    flex-shrink: 0;
+    padding: 13px 20px;
+
+    color: var(--branco);
+    background: var(--azul);
+    border: none;
+    border-radius: 10px;
+
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(37, 99, 166, 0.18);
+
+    transition:
+        background var(--transicao),
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+
+.btn-nova-viagem:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* =========================================================
+   5. INDICADORES GERAIS
+   ========================================================= */
+
+.indicadores-gerais {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+.indicador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-width: 0;
+    padding: 21px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+
+.indicador-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+
+.indicador-icone.azul {
+    color: var(--azul);
+    background: var(--azul-claro);
+}
+
+
+.indicador-icone.laranja {
+    color: var(--laranja);
+    background: var(--laranja-claro);
+}
+
+
+.indicador-icone.verde {
+    color: var(--verde);
+    background: var(--verde-claro);
+}
+
+
+.indicador-icone.roxo {
+    color: var(--roxo);
+    background: var(--roxo-claro);
+}
+
+
+.indicador p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.indicador h3 {
+    margin: 3px 0 0;
+    color: var(--azul-escuro);
+    font-size: 29px;
+}
+
+
+/* =========================================================
+   6. BUSCA E FILTROS
+   ========================================================= */
+
+.filtros-viagens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+
+.filtros-viagens h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 21px;
+}
+
+
+.filtros-viagens p {
+    margin: 5px 0 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+.filtros-controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.filtros-controles input,
+.filtros-controles select {
+    min-height: 43px;
+    padding: 10px 13px;
+
+    color: var(--texto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+}
+
+
+.filtros-controles input {
+    width: 270px;
+    max-width: 100%;
+}
+
+
+.filtros-controles select {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   7. SEÇÕES DE VIAGENS
+   ========================================================= */
+
+.secao-viagens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.titulo-secao h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 19px;
+}
+
+
+.titulo-secao p {
+    margin: 5px 0 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+.grade-viagens {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+
+/* =========================================================
+   8. CARTÕES INDIVIDUAIS DE VIAGEM
+   ========================================================= */
+
+.cartao-viagem {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    padding: 21px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao);
+}
+
+
+.cartao-viagem:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+    border-color: #c6d8ed;
+}
+
+
+.cartao-viagem-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.situacao-viagem {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.situacao-proxima {
+    color: var(--azul);
+    background: var(--azul-claro);
+}
+
+
+.situacao-andamento {
+    color: var(--laranja);
+    background: var(--laranja-claro);
+}
+
+
+.situacao-realizada {
+    color: var(--verde);
+    background: var(--verde-claro);
+}
+
+
+.quantidade-participantes {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+.cartao-viagem h3 {
+    margin: 0 0 12px;
+    color: var(--azul-escuro);
+    font-size: 19px;
+}
+
+
+.cartao-data {
+    margin: 0 0 10px;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.cartao-descricao {
+    flex-grow: 1;
+    margin: 0 0 19px;
+
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+
+.cartao-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    padding-top: 15px;
+    border-top: 1px solid #edf0f4;
+}
+
+
+.btn-cartao {
+    min-height: 38px;
+    padding: 9px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        border-color var(--transicao);
+}
+
+
+.btn-abrir-controle {
+    color: var(--branco);
+    background: var(--azul);
+}
+
+
+.btn-abrir-controle:hover {
+    background: var(--azul-escuro);
+}
+
+
+.btn-iniciar-viagem {
+    color: var(--verde);
+    background: var(--verde-claro);
+    border-color: #c5e7d1;
+}
+
+
+.btn-iniciar-viagem:hover {
+    background: #d2efdd;
+}
+
+
+.btn-finalizar-viagem {
+    color: var(--vermelho);
+    background: var(--vermelho-claro);
+    border-color: #f3cdca;
+}
+
+
+.btn-finalizar-viagem:hover {
+    background: #f9d9d6;
+}
+
+
+.btn-detalhes-viagem {
+    color: var(--azul);
+    background: var(--azul-claro);
+    border-color: #d2e3f7;
+}
+
+
+.btn-detalhes-viagem:hover {
+    background: #d9e9fb;
+}
+
+
+.sem-resultados {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 23px;
+
+    color: var(--texto-secundario);
+    background: var(--branco);
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   9. FORMULÁRIO DE NOVA VIAGEM
+   ========================================================= */
+
+.painel-nova-viagem {
+    display: none;
+    padding: 25px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+
+    scroll-margin-top: 20px;
+}
+
+
+.painel-nova-viagem.aberto {
+    display: block;
+    animation: aparecer 0.2s ease;
+}
+
+
+.cabecalho-formulario {
+    margin-bottom: 22px;
+}
+
+
+.cabecalho-formulario h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 22px;
+}
+
+
+.cabecalho-formulario p {
+    margin: 7px 0 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+.campos-viagem {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+
+.campos-viagem > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+.campos-viagem label,
+.participantes-cabecalho > label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.campos-viagem input,
+.campos-viagem select,
+.campos-viagem textarea {
+    width: 100%;
+    min-height: 43px;
+    padding: 11px 12px;
+
+    color: var(--texto);
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+
+    transition: border-color var(--transicao);
+}
+
+
+.campos-viagem input:focus,
+.campos-viagem select:focus,
+.campos-viagem textarea:focus {
+    border-color: var(--azul);
+    outline: none;
+}
+
+
+.participantes-viagem {
+    margin-top: 25px;
+    padding-top: 22px;
+    border-top: 1px solid var(--borda);
+}
+
+
+.participantes-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+
+#selecionarTodosAlunos {
+    padding: 8px 12px;
+    color: var(--azul);
+    background: var(--azul-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+#selecionarTodosAlunos:hover {
+    background: #d6e7fa;
+}
+
+
+.lista-participantes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+
+    max-height: 310px;
+    overflow-y: auto;
+
+    padding: 3px;
+}
+
+
+.participante-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    min-width: 0;
+    padding: 12px;
+
+    background: #f8fafc;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+
+    cursor: pointer;
+    transition:
+        background var(--transicao),
+        border-color var(--transicao);
+}
+
+
+.participante-item:hover {
+    background: var(--azul-claro);
+    border-color: #c6d8ed;
+}
+
+
+.participante-item input {
+    margin-top: 4px;
+    accent-color: var(--azul);
+}
+
+
+.participante-item span {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+
+.participante-item strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+
+.participante-item small {
+    margin-top: 3px;
+    color: var(--texto-secundario);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+
+.participantes-viagem > small {
+    display: block;
+    margin-top: 12px;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+.botoes-form-viagem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+
+.btn-criar-viagem,
+.btn-cancelar-viagem {
+    min-height: 43px;
+    padding: 11px 19px;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+
+.btn-criar-viagem {
+    color: var(--branco);
+    background: var(--verde);
+}
+
+
+.btn-criar-viagem:hover {
+    background: #146c43;
+}
+
+
+.btn-cancelar-viagem {
+    color: var(--texto);
+    background: #e9edf2;
+}
+
+
+.btn-cancelar-viagem:hover {
+    background: #dce2e9;
+}
+
+
+/* =========================================================
+   10. CONTROLE OPERACIONAL
+   ========================================================= */
+
+.painel-operacional {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 8px;
+    scroll-margin-top: 20px;
+}
+
+
+.painel-operacional.aberto {
+    display: flex;
+    animation: aparecer 0.2s ease;
+}
+
+
+.cabecalho-operacional {
+    padding: 23px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+
+.cabecalho-operacional h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 22px;
+}
+
+
+.cabecalho-operacional p {
+    margin: 7px 0 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+.gestao-viagem {
+    margin: 0;
+}
+
+
+.gestao-viagem-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 22px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+
+.gestao-viagem-topo h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 20px;
+}
+
+
+.gestao-viagem-topo p {
+    margin: 7px 0 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+.acoes-viagem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    align-items: center;
+}
+
+
+.acoes-viagem select {
+    max-width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+
+.btn-excluir-viagem {
+    padding: 10px 13px;
+    color: var(--vermelho);
+    background: var(--vermelho-claro);
+    border: 1px solid #f3cdca;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.btn-excluir-viagem:hover {
+    background: #f9d9d6;
+}
+
+
+/* =========================================================
+   11. CONTADORES DA VIAGEM
+   ========================================================= */
+
+.status-viagem {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+.status-card {
+    padding: 20px 14px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+
+.status-card h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 29px;
+}
+
+
+.status-card p {
+    margin: 6px 0 0;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+.status-card.embarcados {
+    border-top: 4px solid var(--verde);
+}
+
+
+.status-card.pendentes {
+    border-top: 4px solid var(--laranja);
+}
+
+
+.status-card.desembarcados {
+    border-top: 4px solid var(--azul);
+}
+
+
+.status-card.total {
+    border-top: 4px solid var(--roxo);
+}
+
+
+/* =========================================================
+   12. BOTÕES OPERACIONAIS
+   ========================================================= */
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.acao-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 44px;
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background var(--transicao),
+        transform var(--transicao);
+}
+
+
+.acao-link:hover {
+    transform: translateY(-2px);
+}
+
+
+.btn-scan {
+    color: var(--branco);
+    background: var(--azul);
+}
+
+
+.btn-scan:hover {
+    background: var(--azul-escuro);
+}
+
+
+.btn-manual {
+    color: var(--verde);
+    background: var(--verde-claro);
+    border: 1px solid #c5e7d1;
+}
+
+
+.btn-manual:hover {
+    background: #d2efdd;
+}
+
+
+/* Compatibilidade com páginas que ainda usam botões antigos. */
+
+button.btn-scan,
+button.btn-manual {
+    min-height: 44px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+
+button.btn-scan {
+    color: var(--branco);
+    background: var(--azul);
+}
+
+
+button.btn-manual {
+    color: var(--verde);
+    background: var(--verde-claro);
+}
+
+
+/* =========================================================
+   13. BUSCA E LISTA DE ALUNOS
+   ========================================================= */
+
+.busca {
+    margin-top: 2px;
+}
+
+
+.busca input {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 15px;
+
+    color: var(--texto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+
+.busca input:focus {
+    border-color: var(--azul);
+    outline: none;
+}
+
+
+.lista-alunos {
+    padding: 22px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+
+.lista-alunos > h2 {
+    margin: 0 0 17px;
+    color: var(--azul-escuro);
+    font-size: 19px;
+}
+
+
+.aluno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+
+.aluno:last-child {
+    border-bottom: none;
+}
+
+
+.aluno-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    color: var(--azul);
+    background: var(--azul-claro);
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.nome {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.turma {
+    margin-top: 4px;
+    color: var(--texto-secundario);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+
+.status {
+    display: inline-block;
+    flex-shrink: 0;
+
+    padding: 6px 10px;
+
+    color: var(--texto-secundario);
+    background: #eef1f5;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.status.status-embarcardo,
+.status-embarcado,
+.status-embarcados {
+    color: var(--verde);
+    background: var(--verde-claro);
+}
+
+
+.status.status-pendente,
+.status-pendente,
+.status-pendentes {
+    color: var(--laranja);
+    background: var(--laranja-claro);
+}
+
+
+.status.status-desembarcado,
+.status-desembarcado,
+.status-desembarcados {
+    color: var(--azul);
+    background: var(--azul-claro);
+}
+
+
+/* =========================================================
+   14. MODAL DE DETALHES E HISTÓRICO
+   ========================================================= */
+
+.modal-detalhes {
+    width: min(850px, calc(100% - 28px));
+    max-width: 850px;
+    max-height: 85vh;
+
+    padding: 0;
+    overflow: auto;
+
+    color: var(--texto);
+    background: var(--branco);
+
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+.modal-detalhes::backdrop {
+    background: rgba(16, 31, 49, 0.65);
+    backdrop-filter: blur(3px);
+}
+
+
+.modal-conteudo {
+    padding: 25px;
+}
+
+
+.modal-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin-bottom: 22px;
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.modal-cabecalho h2 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 22px;
+}
+
+
+.btn-fechar-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+
+    color: var(--texto);
+    background: #eef1f5;
+    border: none;
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+
+.btn-fechar-modal:hover {
+    background: #dfe5ec;
+}
+
+
+.detalhes-resumo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+
+    margin-bottom: 25px;
+    padding: 17px;
+
+    background: #f7f9fc;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+
+.detalhes-resumo p {
+    margin: 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+
+#conteudoDetalhesViagem > h3 {
+    margin: 0 0 15px;
+    color: var(--azul-escuro);
+    font-size: 17px;
+}
+
+
+.lista-detalhes-participantes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.detalhe-participante {
+    padding: 15px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: var(--branco);
+}
+
+
+.detalhe-participante-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.detalhe-participante-cabecalho > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+
+.detalhe-participante-cabecalho strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+
+.detalhe-participante-cabecalho small {
+    color: var(--texto-secundario);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+
+.historico-participante {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin: 14px 0 0;
+    padding: 12px 0 0 18px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+.historico-participante li {
+    padding-left: 3px;
+    font-size: 12px;
+}
+
+
+.historico-participante li strong {
+    color: var(--azul-escuro);
+}
+
+
+.historico-participante li span {
+    display: block;
+    margin-top: 3px;
+    color: var(--texto-secundario);
+}
+
+
+.detalhe-participante > p {
+    margin: 12px 0 0;
+    padding-top: 10px;
+
+    color: var(--texto-secundario);
+    border-top: 1px solid #edf0f4;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   15. MENU INFERIOR
+   ========================================================= */
+
+.espaco-menu {
+    height: 20px;
+}
+
+
+.menu-inferior {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+
+    padding: 9px 12px;
+
+    background: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid var(--borda);
+    box-shadow: 0 -3px 12px rgba(30, 58, 95, 0.05);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    min-width: 85px;
+    padding: 8px 13px;
+
+    color: var(--texto-secundario);
+    border-radius: 9px;
+
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+
+.menu-item span {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.menu-item:hover {
+    color: var(--azul);
+    background: var(--azul-claro);
+}
+
+
+.menu-item.ativo {
+    color: var(--azul);
+    background: var(--azul-claro);
+}
+
+
+/* =========================================================
+   16. ANIMAÇÕES
+   ========================================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   17. RESPONSIVIDADE — TABLETS
+   ========================================================= */
+
+@media (max-width: 950px) {
+    .indicadores-gerais {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-viagens {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gestao-viagem-topo {
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   18. RESPONSIVIDADE — CELULARES
+   ========================================================= */
+
+@media (max-width: 620px) {
+    header {
+        padding: 21px 16px;
+    }
+
+    .header-content h1 {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 17px 13px 25px;
+    }
+
+    .painel-geral {
+        gap: 21px;
+    }
+
+    .painel-boas-vindas {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 21px;
+    }
+
+    .painel-boas-vindas h2 {
+        font-size: 23px;
+    }
+
+    .btn-nova-viagem {
+        width: 100%;
+    }
+
+    .indicadores-gerais {
+        gap: 10px;
+    }
+
+    .indicador {
+        gap: 10px;
+        padding: 14px 11px;
+    }
+
+    .indicador-icone {
+        width: 39px;
+        height: 39px;
+        font-size: 18px;
+    }
+
+    .indicador p {
+        font-size: 11px;
+    }
+
+    .indicador h3 {
+        font-size: 24px;
+    }
+
+    .filtros-viagens {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filtros-controles {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtros-controles input,
+    .filtros-controles select {
+        width: 100%;
+    }
+
+    .grade-viagens {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cartao-viagem {
+        padding: 17px;
+    }
+
+    .cartao-acoes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .btn-cartao {
+        width: 100%;
+        padding: 10px 8px;
+    }
+
+    .painel-nova-viagem {
+        padding: 18px;
+    }
+
+    .campos-viagem {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lista-participantes {
+        grid-template-columns: minmax(0, 1fr);
+        max-height: 280px;
+    }
+
+    .botoes-form-viagem {
+        flex-direction: column;
+    }
+
+    .botoes-form-viagem button {
+        width: 100%;
+    }
+
+    .gestao-viagem-topo {
+        flex-direction: column;
+        padding: 17px;
+    }
+
+    .acoes-viagem {
+        width: 100%;
+    }
+
+    .acoes-viagem select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .status-viagem {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .status-card {
+        padding: 16px 10px;
+    }
+
+    .status-card h2 {
+        font-size: 25px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acao-link {
+        width: 100%;
+    }
+
+    .lista-alunos {
+        padding: 15px;
+    }
+
+    .aluno {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .aluno-info {
+        gap: 9px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .nome {
+        font-size: 12px;
+    }
+
+    .status {
+        padding: 5px 7px;
+        font-size: 10px;
+    }
+
+    .modal-conteudo {
+        padding: 17px;
+    }
+
+    .modal-cabecalho h2 {
+        font-size: 19px;
+    }
+
+    .detalhes-resumo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .detalhe-participante-cabecalho {
+        align-items: flex-start;
+    }
+
+    .menu-inferior {
+        justify-content: space-around;
+        gap: 0;
+        padding: 7px 4px;
+    }
+
+    .menu-item {
+        flex: 1;
+        min-width: 0;
+        padding: 8px 3px;
+        font-size: 17px;
+    }
+
+    .menu-item span {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   19. ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   AJUSTES DO CABEÇALHO — CADASTRO DE VIAGEM
+   ========================================= */
+
+.pagina-nova-viagem .cabecalho {
+    padding: 18px 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.pagina-nova-viagem .cabecalho .container {
+    width: min(1100px, calc(100% - 40px));
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.pagina-nova-viagem .cabecalho .logo {
+    margin: 0;
+}
+
+.pagina-nova-viagem .cabecalho .logo h1 {
+    margin: 0;
+    font-size: 1.65rem;
+    line-height: 1.25;
+}
+
+.pagina-nova-viagem .cabecalho .logo p {
+    margin: 6px 0 0;
+    font-size: 0.95rem;
+}
+
+.pagina-nova-viagem .cabecalho nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagina-nova-viagem .cabecalho nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+
+.pagina-nova-viagem .cabecalho nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.pagina-nova-viagem .pagina-cadastro {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pagina-nova-viagem .cabecalho-cadastro {
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.pagina-nova-viagem .cartao-cadastro {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    .pagina-nova-viagem .cabecalho .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .pagina-nova-viagem .cabecalho nav {
+        justify-content: flex-start;
+    }
+
+    .pagina-nova-viagem .cabecalho .logo h1 {
+        font-size: 1.4rem;
+    }
+}

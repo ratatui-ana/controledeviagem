@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar viagem | Gerenciador Escolar</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .pagina-cadastro {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 20px 50px;
+        }
+
+        .cabecalho-cadastro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .cabecalho-cadastro h1 {
+            margin: 0 0 8px;
+            color: #183b63;
+        }
+
+        .texto-apoio {
+            color: #64748b;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .cartao-cadastro {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+        }
+
+        .cartao-cadastro h2 {
+            color: #183b63;
+            font-size: 1.15rem;
+            margin: 0 0 18px;
+        }
+
+        .grade-formulario {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .campo-cadastro {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .campo-cadastro.completo {
+            grid-column: 1 / -1;
+        }
+
+        .campo-cadastro label {
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .campo-cadastro input,
+        .campo-cadastro textarea,
+        .campo-cadastro select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font: inherit;
+            background: #fff;
+        }
+
+        .campo-cadastro input:focus,
+        .campo-cadastro textarea:focus,
+        .campo-cadastro select:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+        .campo-cadastro textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .barra-alunos {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(180px, 0.7fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .acoes-selecao {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .lista-alunos-cadastro {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            max-height: 420px;
+            overflow-y: auto;
+        }
+
+        .grupo-turma {
+            padding: 12px 16px;
+            background: #eff6ff;
+            color: #1e40af;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+        }
+
+        .aluno-opcao {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-top: 1px solid #f1f5f9;
+            cursor: pointer;
+        }
+
+        .aluno-opcao:hover {
+            background: #f8fafc;
+        }
+
+        .aluno-opcao input {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            accent-color: #2563eb;
+        }
+
+        .dados-aluno {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .matricula-aluno {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .resumo-selecao {
+            color: #1e40af;
+            background: #eff6ff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .mensagem-vazia {
+            color: #64748b;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .mensagem-erro {
+            color: #b91c1c;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .rodape-formulario {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .botao-cadastro {
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 18px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .botao-secundario {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .botao-principal {
+            background: #1d4ed8;
+            color: white;
+        }
+
+        .botao-principal:hover {
+            background: #1e40af;
+        }
+
+        .botao-secundario:hover {
+            background: #cbd5e1;
+        }
+
+        @media (max-width: 650px) {
+            .grade-formulario,
+            .barra-alunos {
+                grid-template-columns: 1fr;
+            }
+
+            .cartao-cadastro {
+                padding: 18px;
+            }
+
+            .rodape-formulario .botao-cadastro {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-nova-viagem">
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <h1>Gerenciador de Viagens</h1>
+                <p>Cadastro de viagens pedagógicas</p>
+            </div>
+
+            <nav>
+                <a href="index.html">Painel principal</a>
+                <a href="alunos.html">Alunos</a>
+                <a href="relatorios.html">Relatórios</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-cadastro gestao-viagem">
+        <div class="cabecalho-cadastro">
+            <div>
+                <h1>Nova viagem</h1>
+                <p class="texto-apoio">
+                    Cadastre os dados da atividade e escolha os alunos participantes.
+                </p>
+            </div>
+
+            <a href="index.html" class="botao-cadastro botao-secundario">
+                ← Voltar ao painel
+            </a>
+        </div>
+
+        <form id="formNovaViagem">
+            <section class="cartao-cadastro">
+                <h2>1. Informações da viagem</h2>
+
+                <div class="grade-formulario">
+                    <div class="campo-cadastro completo">
+                        <label for="nomeViagem">Nome da viagem *</label>
+                        <input
+                            type="text"
+                            id="nomeViagem"
+                            name="nome"
+                            maxlength="120"
+                            placeholder="Ex.: Visita técnica à UNICAMP"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-cadastro">
+                        <label for="dataViagem">Data da viagem *</label>
+                        <input
+                            type="date"
+                            id="dataViagem"
+                            name="data"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-cadastro">
+                        <label for="localViagem">Destino / local *</label>
+                        <input
+                            type="text"
+                            id="localViagem"
+                            name="local"
+                            maxlength="180"
+                            placeholder="Ex.: Campinas - SP"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-cadastro completo">
+                        <label for="descricaoViagem">
+                            Descrição e orientações
+                        </label>
+                        <textarea
+                            id="descricaoViagem"
+                            name="descricao"
+                            maxlength="1500"
+                            placeholder="Informe o objetivo da atividade, horário de saída, orientações ou outras observações."
+                        ></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cartao-cadastro">
+                <h2>2. Alunos participantes</h2>
+
+                <p class="texto-apoio">
+                    Marque os alunos que participarão desta viagem. A seleção não
+                    altera o cadastro geral de estudantes.
+                </p>
+
+                <br>
+
+                <div class="barra-alunos">
+                    <div class="campo-cadastro">
+                        <label for="buscaAluno">Buscar aluno</label>
+                        <input
+                            type="search"
+                            id="buscaAluno"
+                            placeholder="Nome ou matrícula..."
+                        >
+                    </div>
+
+                    <div class="campo-cadastro">
+                        <label for="filtroTurma">Filtrar por turma</label>
+                        <select id="filtroTurma">
+                            <option value="">Todas as turmas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="acoes-selecao">
+                    <button
+                        type="button"
+                        id="btnSelecionarVisiveis"
+                        class="botao-cadastro botao-secundario"
+                    >
+                        Selecionar visíveis
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnLimparSelecao"
+                        class="botao-cadastro botao-secundario"
+                    >
+                        Limpar seleção
+                    </button>
+                </div>
+
+                <div class="resumo-selecao" id="resumoSelecao">
+                    0 alunos selecionados
+                </div>
+
+                <div
+                    id="listaAlunosCadastro"
+                    class="lista-alunos-cadastro"
+                    aria-live="polite"
+                >
+                    <p class="mensagem-vazia">Carregando alunos...</p>
+                </div>
+            </section>
+
+            <div id="mensagemErroCadastro" hidden></div>
+
+            <div class="rodape-formulario">
+                <a href="index.html" class="botao-cadastro botao-secundario">
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    id="btnSalvarViagem"
+                    class="botao-cadastro botao-principal"
+                >
+                    Salvar viagem
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Carregar os dados antes da lógica de viagens e do formulário. -->
+    <script src="dados.js"></script>
+    <script src="viagens.js"></script>
+    <script src="nova-viagem.js"></script>
+</body>
+</html>
